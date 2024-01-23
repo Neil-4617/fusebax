@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* appbar */
+.fusebax-appbar {
+    height: 7vh;
+}
+
+.fuse-brand-name {
+    font-size: 1.75rem;
+    align-self: center;
+}
+
+
+/* main container */
+.fusebax-main-container {
+    height: 93vh;
+    margin-left: 0;
+}
+
+.fusebax-sidebar {
+    width: 20rem;
+    height: 100%;
+    padding: 5rem 2rem;
+    margin: 0;
+}
+
+.fusebax-main {
+    width: 100%;
+    height: 100%;
+    padding: 5rem 2rem;
+    margin: 0;
+}
