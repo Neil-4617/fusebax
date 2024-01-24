@@ -11,7 +11,7 @@
 }
 
 .fuse-brand-name {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     align-self: center;
 }
 
@@ -34,4 +34,149 @@
     height: 100%;
     padding: 5rem 2rem;
     margin: 0;
+}
+
+
+/*employeeIDCard - Identity Card Preview */
+.fusebax-id-canvas {
+    height: 324px;
+    width: 204px;
+    background-color: aquamarine;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.fusebax-idFrontView {
+    background-image: url("../images/AMS_ID_1(front).jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 16px 12px;
+    position: relative;
+}
+
+.fusebax-idHeader {
+    height: 25%;
+    padding: 0;
+}
+
+.fusebax-company-logo {
+    height: auto;
+    width: 70px;
+    margin: 0;
+}
+
+.fusebax-company-logo-text {
+    font-size: 9px;
+    font-weight: 700;
+    color: #243efb;
+    margin: 0;
+}
+
+.fusebax-company-address-text {
+    font-size: 5px;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+
+.fusebax-employee-photo {
+    width: 141px;
+    height: 216px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.fusebax-employeeInfo-container {
+    height: 100%;
+    padding-left: 0;
+    padding-top: 42px;
+}
+
+.fusebax-employee-signature {
+    width: auto;
+    height: 30px;
+}
+
+.fusebax-employee-name {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.fusebax-employee-jobPosition {
+    font-size: 6px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.fusebax-qr-code {
+    width: auto;
+    height: 35px;
+    margin-top: 17px;
+}
+
+.fusebax-employee-number {
+    font-size: 10px;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+
+.fusebax-idBackView {
+    background-image: url("../images/AMS_ID_1(back).jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+}
+
+.fusebax-backview-containerinfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 16px;
+}
+
+
+.fusebax-title1 {
+    font-size: 9px;
+    font-weight: 700;
+    color: #243efb;
+    text-transform: uppercase;
+    align-self: center;
+    margin-bottom: 5px;
+}
+
+.fusebax-title2 {
+    font-size: 7px;
+    font-weight: 700;
+    color: #243efb;
+    text-transform: uppercase;
+    align-self: center;
+    margin-bottom: 5px;
+}
+
+.fusebax-paragraph-text {
+    font-size: 6px;
+    font-weight: 700;
+    margin-bottom: 0;
+    align-self: center;
+}
+
+.fusebax-paragraph-text2 {
+    font-size: 7px;
+    font-weight: 700;
+    margin-bottom: 0;
+    align-self: center;
+}
+
+.fusebax-chairman-text {
+    font-size: 10px;
+    font-weight: 700;
+    margin-bottom: 0;
+    align-self: center;
 }

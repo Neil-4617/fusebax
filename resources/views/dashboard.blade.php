@@ -44,8 +44,7 @@
                     <div class="card-body">
                         <p class="card-text">Logout</p>
                     </div>
-                </div>
-                
+                </div>               
             </aside>
             <!-- End Sidebar -->
             
@@ -60,80 +59,52 @@
                                 <th scope="col">Middlename</th>
                                 <th scope="col">Lastname</th>
                                 <th scope="col">Job Position</th>
+                                <th scope="col">View</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($dummyData as $employee)
                             <tr>
-                                <th scope="row">AMS-2023-0030</th>
-                                <td>John</td>
-                                <td>Ngueyen</td>
-                                <td>Doe</td>
-                                <td>Driver</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">AMS-2023-0043</th>
-                                <td>Barry</td>
-                                <td>Summer</td>
-                                <td>Allen</td>
-                                <td>Designer</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">AMS-2023-0011</th>
-                                <td>Scot</td>
-                                <td>Smith</td>
-                                <td>Brown</td>
-                                <td>Worker</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">AMS-2023-0024</th>
-                                <td>Tony</td>
-                                <td>Washington</td>
-                                <td>Stark</td>
-                                <td>Engineer</td>
-                            </tr>
-                            <tr>
-                                <th scope="row" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">AMS-2023-0011</th>
-                                <td>Piper</td>
-                                <td>Lang</td>
-                                <td>Rogers</td>
-                                <td>Project Manager</td>
+                                <!-- tap or click ID# to trigger modal -->
+                                <th scope="row" type="button" data-bs-toggle="modal" data-bs-target="#myModal{{$employee['id']}}">AMS-{{$employee['id']}}</th>
+                                <td>{{$employee['firstname']}}</td>
+                                <td>{{$employee['middlename']}}</td>
+                                <td>{{$employee['lastname']}}</td>                   
+                                <td>{{$employee['jobPosition']}}</td>
+                                <td>ID</td>
+                                <!-- Modal -->
+                                <div class="modal fade" id="myModal{{$employee['id']}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <div>
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">{{$employee['firstname']}} {{$employee['lastname']}}</h1>
+                                                <small class="text-muted">{{$employee['jobPosition']}}</small>
+                                            </div>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p class="fw-light">Mobile Number: {{$employee['mobileNumber']}}</p>
+                                            <p class="fw-light">SSS: {{$employee['sss']}}</p>
+                                            <p class="fw-light">Pag-ibig: {{$employee['pagibig']}}</p>
+                                            <p class="fw-light">PhilHealth: {{$employee['philHealth']}}</p>
+                                            <p class="fw-light">TIN: {{$employee['tin']}}</p>
+                                            <p class="fw-light">Drivers Lisence: {{$employee['driversLisence']}}</p>
+                                            <p class="fw-light">Contact Person: {{$employee['contactPerson']}}</p>
+                                            <p class="fw-light">Contact number: {{$employee['contactNumber']}}</p>
+                                            <p class="fw-light">Address: {{$employee['address']}}</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
                             </tr>
                         </tbody>
                     </table>
-                </div>
-                <!-- tap or click ID# to trigger modal -->
-                
-
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <div>
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">Piper L. Rogers</h1>
-                                <small class="text-muted">Project Manager</small>
-                            </div>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <p class="fw-light">Mobile Number: 0000-000-0000</p>
-                            <p class="fw-light">SSS: 0000-0000-0</p>
-                            <p class="fw-light">Pag-ibig: 0000-0000-0</p>
-                            <p class="fw-light">PhilHealth: 0000-0000-0</p>
-                            <p class="fw-light">TIN: 0000-0000-0</p>
-                            <p class="fw-light">Drivers Lisence: 0000-0000-0</p>
-                            <p class="fw-light">Contact Person: Stephen Strange</p>
-                            <p class="fw-light">Contact number: 0000-000-0000</p>
-                            <p class="fw-light">Address: Grand centennial commercial bldg. Block 2D, lot 6, adventurine st. Brgy. Magdalo,Kawit Cavite</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-
-
+                </div>                                  
             </section>
             <!-- End Main Section -->
         </div>
