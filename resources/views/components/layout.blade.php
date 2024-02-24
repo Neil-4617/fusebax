@@ -5,6 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{{ config('app.name', 'Fusebax') }}</title>
 
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        
         <!-- icon -->
         <link rel="icon" type="image/png" href="{{ asset('./asset/images/thunder-bolt-hand-drawn-shape-outline-svgrepo-com.svg')}}">
 
@@ -21,19 +24,17 @@
     <body>
         <!-- Header | Appbar -->
         <x-header />
-        <!-- End Header -->
         
+        <!-- Flash Message -->
+        <x-flash-message />
+
         <!-- Main  -->
         <div class="container-fluid d-flex fusebax-main-container p-0">    
             <!-- Sidebar -->
             <x-sidebar />
-            <!-- End Sidebar -->
             
-            <!-- Main Section -->
-            <section class="container fusebax-main">
-                {{$slot}}
-            </section>
-            <!-- End Main Section -->
+            <!-- Content Goes Here -->
+            {{$slot}}
         </div>
 
         <!-- Bootstrap -->

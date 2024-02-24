@@ -17,5 +17,11 @@ use Illuminate\Support\Facades\Route;
 // All Employees
 Route::get('/', [EmployeeController::class,'index']);
 
+// Show create form
+Route::get('/employees/create', [EmployeeController::class,'create']);
+
+// Store New Employee Data
+Route::post('/employees', [EmployeeController::class,'store']);
+
 // Single Employee
-Route::get('employees/{id}', [EmployeeController::class,'show']);
+Route::get('/employees/{id}', [EmployeeController::class,'show']);

@@ -9,6 +9,32 @@ class Employee extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'firstname', 
+        'middlename', 
+        'lastname',
+        'jobPosition',
+        'mobileNumber',
+        'birthday',
+        'dateHired',
+        'email',
+        'sss',
+        'pagibig',
+        'philHealth',
+        'tin',
+        'driversLisence',
+        'contactPerson',
+        'contactNumber',
+        'adressHouseNumber',
+        'adressStreet',
+        'addressLine2',
+        'addressCity',
+        'addressProvince',
+        'addressCountry',
+        'addressZipCode'
+    ];
+
+
     // Search functionality using $query and array with a variable of $filters
     public function scopefilter($query, array $filters){
         
