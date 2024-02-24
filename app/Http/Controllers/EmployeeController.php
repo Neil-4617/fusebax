@@ -28,7 +28,6 @@ class EmployeeController extends Controller
     
     // Store New Employee Data
     public function store(Request $request){
-        
         $formFields = $request->validate([
             'firstname' => 'required',
             'middlename' => 'required',
@@ -36,13 +35,22 @@ class EmployeeController extends Controller
             'mobileNumber' => 'required',
             'email' => ['required', 'email'],
             'birthday' => 'required',
+            'employeePhoto' => 'required',
             'jobPosition' => 'required',
             'dateHired' => 'required',
             'addressCity' => 'required',
             'addressProvince' => 'required',
             'addressCountry' => 'required'
         ]);
+        if($request->hasFile('employeePhoto')) {
+
+            // change filename of image, save to Cloudinary Object Storage, and add path to record
+            $imageFilename = time().'-'.$request['firstname'].'-'.$request['lastname'];
+            $savedImage = $request['employeePhoto']->storeOnCloudinaryAs('fusebax/employeeImages', $imageFilename);
+            $formFields['employeeImagePath'] = $savedImage->getSecurePath();
         
+        }
+
         //Add New Record
         Employee::create($formFields);
 

@@ -20,6 +20,9 @@
         
         <!-- Styles -->
         <link rel="stylesheet" type="text/css" href="{{ asset('./asset/css/style.css')}}">
+        
+        <!-- Cloudinary -->
+        @cloudinaryJS
     </head>
     <body>
         <!-- Header | Appbar -->

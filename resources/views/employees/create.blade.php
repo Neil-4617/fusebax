@@ -1,6 +1,6 @@
 <x-layout>
     <div class="p-5 mt-1">
-        <form method="POST" action="/employees" novalidate>
+        <form method="POST" action="/employees" enctype="multipart/form-data" novalidate>
             @csrf
             <div class="card mb-2">
                 <div class="card-header mb-2">
@@ -172,6 +172,7 @@
                             <small class="small text-danger">{{$message}}</small>
                         @enderror
                     </div>
+                    
                     <div class="col-md-4">
                         <label for="dateHired" class="form-label">Date Hired</label>
                         <input type="date" class="form-control" id="dateHired" name="dateHired" value="{{old('dateHired')}}" required>
@@ -179,6 +180,15 @@
                             <small class="small text-danger">{{$message}}</small>
                         @enderror
                     </div>
+                    
+                    <div class="col-md">
+                        <label for="employeePhoto" class="form-label">Upload ID</label>
+                        <input type="file" class="form-control" id="employeePhoto" name="employeePhoto" value="{{old('employeePhoto')}}" required>
+                         @error('employeePhoto')
+                            <small class="small text-danger">{{$message}}</small>
+                        @enderror
+                    </div>
+
                 </div>
             </div>
 

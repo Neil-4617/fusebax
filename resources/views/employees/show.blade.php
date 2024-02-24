@@ -15,7 +15,7 @@
                     <p class="fusebax-employee-jobPosition">{{$employee['jobPosition']}}</p>
                     <img class="fusebax-qr-code" src="{{asset('./asset/images/qrCode.png')}}" alt="qr code image">
                 </div>
-                <img class="fusebax-employee-photo"  src="{{asset('./asset/images/imageHere.png')}}" alt="photo of employee">
+                <img class="fusebax-employee-photo"  src="{{$employee['employeeImagePath']}}" alt="photo of employee">
                 <div class="container position-absolute bottom-0 end-0 pb-3 text-center">
                     <p class="fusebax-employee-number">AMS-{{$employee['id']}}</p>
                 </div>

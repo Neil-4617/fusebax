@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('lastname');
             $table->string('jobPosition');
             $table->string('mobileNumber');
+            $table->string('employeeImagePath')->nullable();
             $table->date('birthday');
             $table->date('dateHired');
             $table->string('email')->unique();

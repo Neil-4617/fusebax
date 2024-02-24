@@ -16,6 +16,7 @@ class Employee extends Model
         'jobPosition',
         'mobileNumber',
         'birthday',
+        'employeeImagePath',
         'dateHired',
         'email',
         'sss',
