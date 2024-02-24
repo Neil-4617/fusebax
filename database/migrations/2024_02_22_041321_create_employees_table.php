@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('employeeImagePath')->nullable();
             $table->date('birthday');
             $table->date('dateHired');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->string('sss')->nullable();
             $table->string('pagibig')->nullable();
             $table->string('philHealth')->nullable();

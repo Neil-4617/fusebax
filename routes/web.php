@@ -23,5 +23,14 @@ Route::get('/employees/create', [EmployeeController::class,'create']);
 // Store New Employee Data
 Route::post('/employees', [EmployeeController::class,'store']);
 
+// Show edit form
+Route::get('/employees/{employee}/edit', [EmployeeController::class,'edit']);
+
+// Update Employee
+Route::put('/employees/{employee}', [EmployeeController::class,'update']);
+
+// Delete Employee
+Route::delete('/employees/{employee}', [EmployeeController::class,'destroy']);
+
 // Single Employee
-Route::get('/employees/{id}', [EmployeeController::class,'show']);
+Route::get('/employees/{employee}', [EmployeeController::class,'show']);

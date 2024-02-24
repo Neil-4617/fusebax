@@ -17,8 +17,8 @@ class EmployeeController extends Controller
     }
 
     // Single Employee
-    public function show(Employee $id){
-        return view('employees.show', ['employee' => $id]);
+    public function show(Employee $employee){
+        return view('employees.show', ['employee' => $employee]);
     }
     
     // Show Create Form
@@ -33,7 +33,7 @@ class EmployeeController extends Controller
             'middlename' => 'required',
             'lastname' => 'required',
             'mobileNumber' => 'required',
-            'email' => ['required', 'email'],
+            'email' => ['required', Rule::unique('employees','email')],
             'birthday' => 'required',
             'employeePhoto' => 'required',
             'jobPosition' => 'required',
@@ -54,7 +54,49 @@ class EmployeeController extends Controller
         //Add New Record
         Employee::create($formFields);
 
-        return redirect('/')->with('message', 'New Employee Added Successfully');
+        return redirect('/')->with('message', 'New employee added successfully!');
+    }
+
+    // Show Edit Form
+    public function edit(Employee $employee) {
+        return view('employees.edit', ['employee' => $employee]);
+    }
+
+    // Update Employee Data
+    public function update(Request $request, Employee $employee){
+        $formFields = $request->validate([
+            'firstname' => 'required',
+            'middlename' => 'required',
+            'lastname' => 'required',
+            'mobileNumber' => 'required',
+            'email' => 'required',
+            'birthday' => 'required',
+            'jobPosition' => 'required',
+            'dateHired' => 'required',
+            'addressCity' => 'required',
+            'addressProvince' => 'required',
+            'addressCountry' => 'required'
+        ]);
+        if($request->hasFile('employeePhoto')) {
+
+            // change filename of image, save to Cloudinary Object Storage, and add path to record
+            $imageFilename = time().'-'.$request['firstname'].'-'.$request['lastname'];
+            $savedImage = $request['employeePhoto']->storeOnCloudinaryAs('fusebax/employeeImages', $imageFilename);
+            $formFields['employeeImagePath'] = $savedImage->getSecurePath();
+        
+        }
+
+        //Add New Record
+        $employee->update($formFields);
+
+        return back()->with('message', 'Employee update successfully!');
+    }
+
+    // Delete Employee Data
+    public function destroy(Employee $employee) {
+        $employee->delete();
+        return redirect('/')->with('message', 'Employee data deleted!');
+
     }
     
 }

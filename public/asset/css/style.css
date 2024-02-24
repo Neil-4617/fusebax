@@ -47,7 +47,7 @@
 }
 
 .fusebax-idFrontView {
-    background-image: url("../images/AMS_ID_1(front).jpg");
+    background-image: url("https://res.cloudinary.com/dt6gbs9up/image/upload/v1708782774/fusebax/identityCardAssets/AMS_ID_1_front_gt4s1o.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     margin: 0;
@@ -128,7 +128,7 @@
 
 
 .fusebax-idBackView {
-    background-image: url("../images/AMS_ID_1(back).jpg");
+    background-image: url("https://res.cloudinary.com/dt6gbs9up/image/upload/v1708782758/fusebax/identityCardAssets/AMS_ID_1_Back_f3j94l.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     margin: 0;
