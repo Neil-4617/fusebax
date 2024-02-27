@@ -6,6 +6,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
 use App\Models\Employee;
+use App\Models\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -22,7 +23,13 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-    
+
+        //password: *amshr
+        User::create([
+            'username' => 'rowena',
+            'email' => 'rd@email.com',
+            'password' => '$2a$10$MyVyNG4Qk7Q04z0amQNrzey4hZoYws8RLYidqCT589a8o.Zqhyk7a'
+        ]);
     
         Employee::create([
                 'firstname' => 'Scott',

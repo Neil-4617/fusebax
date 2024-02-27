@@ -184,7 +184,7 @@
                     <div class="col-md">
                         <label for="employeePhoto" class="form-label">Upload ID</label>
                         <input type="file" class="form-control" id="employeePhoto" name="employeePhoto" value="{{old('employeePhoto')}}" required>
-                         @error('employeePhoto')
+                        @error('employeePhoto')
                             <small class="small text-danger">{{$message}}</small>
                         @enderror
                     </div>
