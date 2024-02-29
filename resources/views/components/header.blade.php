@@ -24,10 +24,10 @@
                         <li>
                             <form method="POST" action="/logout">
                                 @csrf
-                                <a class="dropdown-item" role="button" type="submit" >
+                                <button class="dropdown-item" role="button" type="submit" >
                                     <i class="fa-solid fa-door-closed me-1"></i>
                                     Logout
-                                </a>
+                                </button>
                             </form>
                         </li>
                     </ul>

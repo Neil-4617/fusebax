@@ -34,7 +34,7 @@ Route::put('/employees/{employee}', [EmployeeController::class,'update'])->middl
 Route::delete('/employees/{employee}', [EmployeeController::class,'destroy'])->middleware('auth');
 
 // Single Employee
-Route::get('/employees/{employee}', [EmployeeController::class,'show']);
+Route::get('/employees/{employee}', [EmployeeController::class,'show'])->middleware('auth');
 
 
 // Show User Landing Page

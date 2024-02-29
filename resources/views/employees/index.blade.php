@@ -8,7 +8,7 @@
                     <th scope="col" class="d-sm-block d-md-none">#</th>
                     <th scope="col">Name</th>
                     <th scope="col" class="d-none d-md-flex"><span>Job Position</span></th>
-                    <th scope="col"><span class="d-flex">View</span></th>
+                    <th scope="col"><span class="d-flex p-0 m-0">View</span></th>
                 </tr>
             </thead>
             <tbody>
