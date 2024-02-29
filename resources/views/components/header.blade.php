@@ -1,45 +1,69 @@
-<div class="navbar bg-light fusebax-appbar navbar-expand-lg justify-content-between">
-    <div class="container justify-content-start">
-        <a class="navbar-brand" href={{auth()? "/home": "/"}} >
-            <img src="{{asset('./asset/images/thunder-bolt-hand-drawn-shape-outline-svgrepo-com.svg')}}" alt="brand icon" width="30" height="24">
-            <span class="fuse-brand-name">Fusebax</span>
-        </a>
-    </div>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
+<header class="container position-relative">
+    <nav class="navbar fusebax-appbar navbar-expand-lg">
+        <div class="container-fluid justify-content-between">
+            <a class="navbar-brand" href={{auth()? "/home": "/"}} >
+                <img src="{{asset('./asset/images/fuseboxLogo.svg')}}" alt="brand icon" width="30" height="24">
+                <span class="fuse-brand-name">Fusebax</span>
+            </a>
             @auth
-            <li class="nav-item">
-                <span>Welcome {{auth()->user()->username}}</span>
-            </li>
-            <li class="nav-item">
-                <form method="POST" action="/logout">
-                    @csrf
-                    <button class="btn" type="submit" >
-                        <i class="fa-solid fa-door-closed"></i>
-                        Logout
-                    </button>
-                </form>
-            </li>
             
+            <ul class="navbar-nav align-items-center ms-auto flex-md-row">
+                @if(Route::current()->uri() === "/")
+                <li class="nav-item me-4 d-none d-md-block">
+                    <a href="/employees/create" type="button" class="btn btn-success px-3">
+                        <i class="fa-solid fa-user-plus"></i>
+                        Add
+                    </a>
+                </li>
+                @endif
+                <li class="nav-item dropdown d-none d-md-block">
+                    <a class="nav-link dropdown-toggle text-capitalize" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Welcome {{auth()->user()->username}}
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <form method="POST" action="/logout">
+                                @csrf
+                                <a class="dropdown-item" role="button" type="submit" >
+                                    <i class="fa-solid fa-door-closed me-1"></i>
+                                    Logout
+                                </a>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item d-md-none">
+                    <form method="POST" action="/logout">
+                        @csrf
+                        <button class="btn nav-link" type="submit" >
+                            <i class="fa-solid fa-door-closed me-1"></i>
+                            Logout
+                        </button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </nav>
             @else
-            <li class="nav-item">
                 
-                <a class="nav-link" aria-current="page" href="/register">
-                    <i class="fa-solid fa-user-plus"></i>
-                    Register
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/login">
-                    <i class="fa-solid fa-right-to-bracket"></i>
-                    Login
-                </a>
-            </li>   
-            @endauth
-        </ul>
-    </div>
-</div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        @if(Route::current()->uri() !== "register")
 
+                    <a href="/register" class="nav-link d-flex align-items-center px-3">
+                        <i class="fa-solid fa-user-plus me-2"></i>
+                        Register
+                    </a>
+                    @endif
+                    @if(Route::current()->uri() !== "login")
+                    <a href="/login" class="nav-link d-flex align-items-center px-3">
+                        <i class="fa-solid fa-right-to-bracket me-2"></i>
+                        Login
+                    </a>
+                    @endif
+                </li>
+            </ul>
+        </div>
+    </nav>
+            @endauth
+</header>

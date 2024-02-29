@@ -37,14 +37,14 @@ Route::delete('/employees/{employee}', [EmployeeController::class,'destroy'])->m
 Route::get('/employees/{employee}', [EmployeeController::class,'show']);
 
 
-// Show User Register Form
-Route::get('/home' , [UserController::class, 'index'])->middleware('guest');
+// Show User Landing Page
+Route::get('/home', [UserController::class, 'index'])->middleware('guest');
 
 // Show User Register Form
-Route::get('/register' , [UserController::class, 'create'])->middleware('guest');
+Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 
 // Create New User
-Route::post('/users', [UserController::class, 'store'])->middleware('auth');
+Route::post('/users', [UserController::class, 'store'])->middleware('guest');
 
 // Logout User
 Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
