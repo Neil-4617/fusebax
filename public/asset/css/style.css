@@ -461,3 +461,25 @@ z-index: -1;
     margin-bottom: 0;
     align-self: center;
 }
+
+
+/*
+==============
+  toggle button
+==============
+*/
+
+.fusebax-card {
+  display: none;
+  margin: 0 auto;
+}
+
+.fusebax-card.active {
+  display: block;
+}
+
+.fuse-height {
+  width: 35rem;
+  margin: 0 auto;
+}
+

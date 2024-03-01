@@ -117,7 +117,7 @@
                         <div class="position-relative right-hero-color vh-75 d-flex justify-content-center mb-0 pb-0">
                             <!-- 3.375” x 2.125“ Standard ID size -->
                             <div class="position-absolute w-100 h-100">
-                                <div class="container fusebax-idFrontView fusebax-id-canvas d-none d-md-flex">
+                                <div class="container fusebax-idFrontView fusebax-id-canvas d-none d-md-block">
                                     <div class="container fusebax-idHeader">
                                         <img class="fusebax-company-logo" src="{{asset('asset/images/companyID/amsLogo.jpg
                                             ')}}" alt="company logo">
