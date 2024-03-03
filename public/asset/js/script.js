@@ -8,6 +8,7 @@ new DataTable('#fusebaxDB');
 const multiStepForm = document.querySelector("[data-multi-step]")
 const formSteps = [...document.querySelectorAll("[data-step]")]
 
+
 // Handle Changes on Input Field
 multiStepForm.addEventListener('change', e => {
 	const inputs = [ ...formSteps[currentStep].querySelectorAll("input")]

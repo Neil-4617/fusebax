@@ -1,5 +1,5 @@
 <x-layout>
-<div class="conatainer fusebax-container-1">
+<div class="fusebax-container-1">
     <div class="px-3 mt-4">
         <form method="POST" action="/employees" enctype="multipart/form-data" data-multi-step novalidate>
             @csrf
