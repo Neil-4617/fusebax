@@ -19,10 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [EmployeeController::class,'index'])->middleware('auth');
 
 // Show create form
-Route::get('/employees/create', [EmployeeController::class,'create'])->middleware('auth');
+Route::get('/employees/create', [EmployeeController::class,'create']);
 
 // Store New Employee Data
-Route::post('/employees', [EmployeeController::class,'store'])->middleware('auth');
+Route::post('/employees', [EmployeeController::class,'store']);
 
 // Show edit form
 Route::get('/employees/{employee}/edit', [EmployeeController::class,'edit'])->middleware('auth');

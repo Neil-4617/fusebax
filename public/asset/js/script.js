@@ -8,6 +8,36 @@ new DataTable('#fusebaxDB');
 const multiStepForm = document.querySelector("[data-multi-step]")
 const formSteps = [...document.querySelectorAll("[data-step]")]
 
+// Handle Changes on Input Field
+multiStepForm.addEventListener('change', e => {
+	const inputs = [ ...formSteps[currentStep].querySelectorAll("input")]
+
+	if (e.target.validity.valid) {
+		if(e.target.getAttribute != null) {
+			if (e.target.value.length >= e.target.getAttribute('minlength')){
+				document.querySelector(`[data-valid-${e.target.name}]`).textContent = `Looks good`,
+				document.querySelector(`[data-valid-${e.target.name}]`).classList.replace("invalid-feedback", "valid-feedback"),
+				document.querySelector(`#${e.target.id}`).classList.remove("fusebax-invalid"),	
+				document.querySelector(`#${e.target.id}`).classList.add("fusebax-valid")	
+			}
+			else {
+				document.querySelector(`[data-valid-${e.target.name}]`).textContent = `Invalid ${e.target.name}`,
+				document.querySelector(`[data-valid-${e.target.name}]`).classList.replace("valid-feedback", "invalid-feedback"),
+				document.querySelector(`#${e.target.id}`).classList.remove("fusebax-valid"),
+				document.querySelector(`#${e.target.id}`).classList.add("fusebax-invalid")
+			}
+		document.querySelector(`[data-valid-${e.target.name}]`).classList.add("d-block")
+		}
+	}
+	else {
+		document.querySelector(`[data-valid-${e.target.name}]`).textContent = `Invalid ${e.target.name}`,
+		document.querySelector(`[data-valid-${e.target.name}]`).classList.replace("valid-feedback", "invalid-feedback"),
+		document.querySelector(`#${e.target.id}`).classList.remove("fusebax-valid"),
+		document.querySelector(`#${e.target.id}`).classList.add("fusebax-invalid")
+	}
+})
+
+
 let currentStep = formSteps.findIndex(step => {
 	return step.classList.contains("active")
 })

@@ -30,7 +30,7 @@ return new class extends Migration
             $table->string('pagibig')->nullable();
             $table->string('philHealth')->nullable();
             $table->string('tin')->nullable();
-            $table->string('driversLisence')->nullable();
+            $table->string('driversLicense')->nullable();
             $table->string('contactPerson')->nullable();
             $table->string('contactNumber')->nullable();
             $table->string('adressHouseNumber')->nullable();

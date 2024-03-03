@@ -5,6 +5,7 @@
 }
 
 
+
 /* homepage */
 /***************
     main header 
@@ -267,6 +268,21 @@ z-index: -1;
 
 /*
 ==============
+  create page 
+==============
+*/
+.fusebax-container-1 {
+    background-color: #F9F9FB;
+    min-height: 90vh;
+    padding-top: 3rem;
+    background-size: contain;
+    background-image: url(../images/our-service/our-service-background.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/*
+==============
   footer 
 ==============
 */
@@ -483,3 +499,42 @@ z-index: -1;
   margin: 0 auto;
 }
 
+
+/*
+==============
+    custome input[type:number]
+    Chrome  
+==============
+*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance:none;
+    margin: 0;
+}
+
+
+/*
+==============
+    validation
+==============
+*/
+.fusebax-valid {
+    border-color: green;
+    padding-right: calc(1.5em + 0.75rem);
+    background-image: url(../images/checkIcon.svg);
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+
+.fusebax-invalid {
+    border-color: red;
+    padding-right: calc(1.5em + 0.75rem);
+    background-image: url(../images/invalidIcon.svg);
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+/*end css*/
