@@ -12,12 +12,13 @@ class EmployeeController extends Controller
     public function index(){
         return view('employees.index', [
             'employees' => Employee::latest()->filter
-                (request(['search']))->paginate(5)
+                (request(['search']))->paginate(10)
         ]);
     }
 
     // Single Employee
     public function show(Employee $employee){
+        //dd($employee);
         return view('employees.show', ['employee' => $employee]);
     }
     
@@ -32,15 +33,26 @@ class EmployeeController extends Controller
             'firstname' => 'required',
             'middlename' => 'required',
             'lastname' => 'required',
-            'mobileNumber' => 'required',
+            'gender' => 'required',
+            'mobileNumber' => ['required', 'max:10'],
             'email' => ['required', Rule::unique('employees','email')],
             'birthday' => 'required',
-            'employeePhoto' => 'required',
             'jobPosition' => 'required',
             'dateHired' => 'required',
+            'sss' => ['required', 'max:10'],
+            'pagibig' => ['required', 'max:12'],
+            'philHealth' => ['required', 'max:12'],
+            'tin' => ['required', 'max:12'],
+            'driversLicense' => ['nullable', 'max:12'],
+            'contactPerson' => 'required',
+            'contactNumber' => ['required', 'max:10'],
+            'addressHouseNumber' => 'required',
+            'addressStreet' => 'required',
+            'addressLine2' => 'nullable',
             'addressCity' => 'required',
             'addressProvince' => 'required',
-            'addressCountry' => 'required'
+            'addressCountry' => 'required',
+            'addressZipCode' => 'required'
         ]);
         if($request->hasFile('employeePhoto')) {
 
@@ -50,7 +62,6 @@ class EmployeeController extends Controller
             $formFields['employeeImagePath'] = $savedImage->getSecurePath();
         
         }
-
         //Add New Record
         Employee::create($formFields);
 
@@ -68,14 +79,28 @@ class EmployeeController extends Controller
             'firstname' => 'required',
             'middlename' => 'required',
             'lastname' => 'required',
-            'mobileNumber' => 'required',
+            'gender' => 'required',
+            'mobileNumber' => ['required', 'max:10'],
             'email' => 'required',
             'birthday' => 'required',
+            'gender' => 'required',
+            'employeePhoto' => 'required',
             'jobPosition' => 'required',
             'dateHired' => 'required',
+            'sss' => ['required', 'max:10'],
+            'pagibig' => ['required', 'max:12'],
+            'philHealth' => ['required', 'max:12'],
+            'tin' => ['required', 'max:12'],
+            'driversLicense' => ['nullable','min:9','max:12'],
+            'contactPerson' => 'required',
+            'contactNumber' => ['required', 'max:10'],
+            'addressHouseNumber' => 'required',
+            'addressStreet' => 'required',
+            'addressLine2' => 'nullable',
             'addressCity' => 'required',
             'addressProvince' => 'required',
-            'addressCountry' => 'required'
+            'addressCountry' => 'required',
+            'addressZipCode' => 'required'
         ]);
         if($request->hasFile('employeePhoto')) {
 

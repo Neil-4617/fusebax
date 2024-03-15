@@ -20,12 +20,13 @@ return new class extends Migration
             $table->string('firstname');
             $table->string('middlename');
             $table->string('lastname');
-            $table->string('jobPosition');
+            $table->string('gender');
             $table->string('mobileNumber');
-            $table->string('employeeImagePath')->nullable();
-            $table->date('birthday');
-            $table->date('dateHired');
             $table->string('email');
+            $table->date('birthday');
+            $table->string('jobPosition');
+            $table->date('dateHired');
+            $table->string('employeeImagePath')->nullable();
             $table->string('sss')->nullable();
             $table->string('pagibig')->nullable();
             $table->string('philHealth')->nullable();
@@ -33,8 +34,8 @@ return new class extends Migration
             $table->string('driversLicense')->nullable();
             $table->string('contactPerson')->nullable();
             $table->string('contactNumber')->nullable();
-            $table->string('adressHouseNumber')->nullable();
-            $table->string('adressStreet')->nullable();
+            $table->string('addressHouseNumber');
+            $table->string('addressStreet');
             $table->string('addressLine2')->nullable();
             $table->string('addressCity');
             $table->string('addressProvince');

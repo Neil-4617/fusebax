@@ -1,6 +1,6 @@
 <x-layout>
     <!-- Main  --> 
-    <section class="container pt-5">
+    <section class="container py-5">
         <table id="fusebaxDB" class="table table-striped w-100">
             <thead>
                 <tr>
@@ -13,6 +13,7 @@
             </thead>
             <tbody>
                 @foreach ($employees as $employee)
+                
                 <tr>
                     <!-- tap or click ID# to trigger modal -->
                     <th>
@@ -101,7 +102,6 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn fusebax-btn-outlined" data-bs-dismiss="modal">Print</button>
                                 <button type="button" class="btn fusebax-btn" data-bs-dismiss="modal">Close</button>
                             </div>
                             </div>
@@ -109,6 +109,84 @@
                     </div>
                 </tr>
                 @endforeach
+                <tr>
+                    <td>61</td>
+                    <td>Brielle Williamson</td>
+                    <td>Integration Specialist</td>
+                    <td>New York</td>
+                    <td class="d-none"></td>
+                </tr>
+                <tr>
+                    <td>61</td>
+                    <td>Brielle Williamson</td>
+                    <td>Integration Specialist</td>
+                    <td>New York</td>
+                    <td class="d-none"></td>
+                </tr>
+                <tr>
+                    <td>61</td>
+                    <td>Brielle Williamson</td>
+                    <td>Integration Specialist</td>
+                    <td>New York</td>
+                    <td class="d-none"></td>
+                </tr>
+                <tr>
+                    <td>61</td>
+                    <td>Brielle Williamson</td>
+                    <td>Integration Specialist</td>
+                    <td>New York</td>
+                    <td class="d-none"></td>
+                </tr>
+                <tr>
+                    <td>61</td>
+                    <td>Brielle Williamson</td>
+                    <td>Integration Specialist</td>
+                    <td>New York</td>
+                    <td class="d-none"></td>
+                </tr>
+                <tr>
+                    <td>61</td>
+                    <td>Brielle Williamson</td>
+                    <td>Integration Specialist</td>
+                    <td>New York</td>
+                    <td class="d-none"></td>
+                </tr>
+                <tr>
+                    <td>61</td>
+                    <td>Brielle Williamson</td>
+                    <td>Integration Specialist</td>
+                    <td>New York</td>
+                    <td class="d-none"></td>
+                </tr>
+                <tr>
+                    <td>61</td>
+                    <td>Brielle Williamson</td>
+                    <td>Integration Specialist</td>
+                    <td>New York</td>
+                    <td class="d-none"></td>
+                </tr>
+                <tr>
+                    <td>61</td>
+                    <td>Brielle Williamson</td>
+                    <td>Integration Specialist</td>
+                    <td>New York</td>
+                    <td class="d-none"></td>
+                </tr>
+                <tr>
+                    <td>61</td>
+                    <td>Brielle Williamson</td>
+                    <td>Integration Specialist</td>
+                    <td>New York</td>
+                    <td class="d-none"></td>
+                </tr>
+                <tr>
+                    <td>61</td>
+                    <td>Brielle Williamson</td>
+                    <td>Integration Specialist</td>
+                    <td>New York</td>
+                    <td class="d-none"></td>
+                </tr>
+                
             </tbody>
         </table>
     </section>

@@ -1,7 +1,7 @@
 <x-layout>
     <div class="fusebax-container-1">
         <div class="px-3 mt-4">
-            <form method="POST" action="/employees/{{$employee['id']}}" enctype="multipart/form-data" data-multi-step novalidate>
+            <form method="POST" action="/employees/{{$employee['id']}}" enctype="multipart/form-data" data-edit-form novalidate>
                 @csrf
                 @method('PUT')
                 <div class="row">
@@ -10,18 +10,17 @@
                             <div class="row justify-content-center pb-5">
                                 <div class="col-md-4">
                                     <div class="card mb-2 fusebax-card px-3 active" data-step>
-                                        <h2 class="text-center fs-4 text-black mb-5 mx-1 mx-md-4 mt-4">Personal Information</h2>
+                                        <h2 class="text-center fs-4 text-black mb-3 mx-1 mx-md-4 mt-4">Personal Information</h2>
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col-md-12 mb-3">
+                                                    <img class="img-fluid border border-secondary mb-2" src="{{$employee['employeeImagePath']? $employee['employeeImagePath'] : asset('asset/images/companyID/imageHere.png')}}"/>
                                                     <label for="employeePhoto" class="form-label mb-0 ms-2">Upload ID *</label>
                                                     <input 
                                                     type="file" 
                                                     class="form-control" 
                                                     id="employeePhoto" 
-                                                    name="employeePhoto" 
-
-                                                    value="{{$employee['employeePhoto']}}" 
+                                                    name="employeePhoto"
                                                     required>
                                                     <small data-valid-employeePhoto class="valid-feedback">Looks good!</small>
                                                     @error('employeePhoto')
@@ -29,7 +28,7 @@
                                                     @enderror
                                                 </div>
                                                 <div class="col-md-12 mb-3">
-                                                    <label for="firstname" class="form-label mb-0 ms-2">Firstname *</label>
+                                                    <label for="firstname" class="form-label mb-0 ms-2">First Name *</label>
                                                     <input 
                                                     type="text" 
                                                     class="form-control" 
@@ -47,7 +46,7 @@
                                                 </div>
                                                 
                                                 <div class="col-md-12 mb-3">
-                                                    <label for="middlename" class="form-label mb-0 ms-2">Middlename *</label>
+                                                    <label for="middlename" class="form-label mb-0 ms-2">Middle Name *</label>
                                                     <input 
                                                     type="text" 
                                                     class="form-control" 
@@ -66,7 +65,7 @@
                                                 </div>
                         
                                                 <div class="col-md-12 mb-3">
-                                                    <label for="lastname" class="form-label mb-0 ms-2">Lastname *</label>
+                                                    <label for="lastname" class="form-label mb-0 ms-2">Surname *</label>
                                                     <input 
                                                     type="text" 
                                                     class="form-control" 
@@ -81,8 +80,29 @@
                                                     @error('lastname')
                                                         <small class="small text-danger">{{$message}}</small>
                                                     @enderror
-                                                    
                                                 </div>
+
+                                                <div class="col-md-4 mb-3">
+                                                    <label for="gender" class="form-label mb-0 ms-2">Gender *</label>
+                                                    <select 
+                                                    name="gender" 
+                                                    id="gender" 
+                                                    class="form-control" 
+                                                    required>
+                                                        <option value="" @if($employee->gender == null ) {{ 'selected' }} @endif>
+                                                        </option>
+                                                        <option value="male" @if($employee->gender == "male") {{ 'selected' }} @endif>
+                                                            Male
+                                                        </option>
+                                                        <option value="female" @if($employee->gender == "female") {{ 'selected' }} @endif>Female
+                                                        </option>
+                                                    </select>
+                                                    <small data-valid-gender class="valid-feedback">Looks good!</small>
+                                                    @error('gender')
+                                                        <small class="small text-danger">{{$message}}</small>
+                                                    @enderror
+                                                </div>
+                                                
                                                 <div class="col-md-6 mb-3">
                                                     <label for="jobPosition" class="form-label mb-0 ms-2">Job Position *</label>
                                                     <input 
@@ -130,7 +150,7 @@
                                                     
                                                 </div>
                         
-                                                <div class="col-md-12">
+                                                <div class="col-md-12 mb-3">
                                                     <label for="email" class="form-label mb-0 ms-2">Email Address</label>
                                                     <input 
                                                     type="email" 
@@ -146,7 +166,7 @@
                                                     
                                                 </div>
                         
-                                                <div class="col-md-12">
+                                                <div class="col-md-12 ">
                                                     <label 
                                                     for="birthday" class="form-label mb-0 ms-2">Birthday</label>
                                                     <input 
@@ -350,7 +370,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-4 ms-auto pe-5 mb-5 d-flex justify-content-between">
-                                    <button class="btn fusebax-btn-outlined" type="button" data-previous >Cancel</button>
+                                    <a class="btn fusebax-btn-outlined" type="button" href="./" >Cancel</a>
                                     <button type="submit" class="btn fusebax-btn">Update</button>
                                 </div>
                             </div>
@@ -363,4 +383,6 @@
             </form>    
         </div>
     </div>
+    <!-- Custom Script -->
+    <script src="{{ asset('asset/js/create.js') }}"></script>
 </x-layout>
