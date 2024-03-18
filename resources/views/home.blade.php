@@ -38,7 +38,7 @@
             <div class="container">
                 <nav class="navbar py-0">
                     <div class="logo">
-                        <a class="navbar-brand py-0 me-0" href="/home"><img src="{{asset('./asset/images/fuseboxLogo.svg')}}" alt="brand icon" width="25" height="25" class="img-fluid">
+                        <a class="navbar-brand py-0 me-0" href="/home"><img src="{{asset('asset/images/fuseboxLogo.svg')}}" alt="brand icon" width="25" height="25" class="img-fluid">
                         <span class="fuse-brand-name">Fusebax</span>
                         </a>
                     </div>                                        
